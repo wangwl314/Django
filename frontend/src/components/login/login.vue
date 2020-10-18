@@ -24,13 +24,20 @@ export default {
     login(){
       axios({
         method: 'post',
-        url: 'http://127.0.0.1:8000/apilogin/',
+        url: 'http://127.0.0.1:8000/gettoken/',
         data: {
           username: this.username,
           password: this.password,
         },
       }).then(res => {
-        console.log(res);
+        if(res.status<400){
+          this.$store.dispatch('chgstat')
+          this.$store.dispatch('gettoken',res.data.access)
+          this.$store.dispatch('updatetoken',res.data.refresh)
+          this.$router.replace('/home')
+        }else{
+          alert('access denyed')
+        }
       })
     }
   },
