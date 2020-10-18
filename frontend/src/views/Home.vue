@@ -16,13 +16,13 @@
       <img  src='@/assets/img/logo.png'>
       <p>作者信息</p>
       </intro>
-      <article class='article-area'>
-      <router-link to='/'></router-link>
-      <keep-alive><router-view></router-view></keep-alive>
-      </article>
     </div>
 
-    <button @click="showdata">+++</button>
+  <div>
+    <abstract></abstract>
+  </div>
+  
+    <button @click="showdata" style="margin-left:90px;">test</button>
 
   </div>
 </template>
@@ -32,6 +32,7 @@
   import naviitem from '../components/navigate/naviitem'
   import intro from '../components/introduce/intro'
   import login from '../components/login/login'
+  import abstract from '../components/abstract/abstract'
   import axios from 'axios'
   export default {
     name:'Home',
@@ -47,6 +48,7 @@
       naviitem,
       navibar,
       login,
+      abstract,
     }, 
   }
 </script>
@@ -54,10 +56,5 @@
 
 <style>
 @import '../assets/css/base.css';
-  .article-area {
-    float: right;
-    width: 78%;
-    text-align: center;
-  }
 </style>
 
