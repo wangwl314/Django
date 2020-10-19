@@ -8,6 +8,6 @@ class CategoryAdmin(admin.ModelAdmin):
 admin.site.register(Category, CategoryAdmin)
 
 class ArticleAdmin(admin.ModelAdmin):
-  list_display = ('title','text','cate','insTime')
+  list_display = ('title','text','cate','insTime','active')
   search_fields = ['text']
 admin.site.register(Article, ArticleAdmin)

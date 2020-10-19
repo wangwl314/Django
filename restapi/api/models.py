@@ -15,9 +15,10 @@ class Article(models.Model):
   title = models.CharField(max_length=50)
   text = models.TextField(default='')
   cate = models.ForeignKey('Category', on_delete=models.RESTRICT)
-  actvie = models.BooleanField(default=False)
-  createTime = models.DateTimeField(auto_created=True)
+  active = models.CharField(choices=[('yes','Y'),('no','N')],
+  default='no', max_length=5)
   insTime = models.DateTimeField(auto_now=True)
+  
 
 class Lvmsg(models.Model):
   user = models.CharField(max_length=20)

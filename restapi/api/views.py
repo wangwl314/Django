@@ -12,5 +12,5 @@ class CategoryVS(ModelViewSet):
 
 class ArticleVS(ModelViewSet):
   serializer_class = ArticleSl
-  queryset = Article.objects.all()
+  queryset = Article.objects.filter(active='yes')
   authentication_classes = [JWTAuthentication]
