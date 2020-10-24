@@ -1,5 +1,5 @@
 from rest_framework.serializers import ModelSerializer
-from .models import Category, Article
+from .models import Category, Article, Lvmsg
 
 class CategorySL(ModelSerializer):
   class Meta:
@@ -9,4 +9,9 @@ class CategorySL(ModelSerializer):
 class ArticleSl(ModelSerializer):
   class Meta:
     model = Article
-    fields = ['title','text','cate','insTime']
+    fields = ['id','title','text','cate','insTime']
+
+class LvmsgSl(ModelSerializer):
+  class Meta:
+    model = Lvmsg
+    fields = '__all__'

@@ -22,10 +22,10 @@ from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 router = DefaultRouter()
 router.register(r'cate', views.CategoryVS)
 router.register(r'article', views.ArticleVS)
-
+router.register(r'msg', views.LvmsgVS)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
-    path('gettoken/', TokenObtainPairView.as_view(), name='gettoken'),
-    path('updatetoken/', TokenRefreshView.as_view(), name='updatetoken'),
+    path('api/gettoken/', TokenObtainPairView.as_view(), name='gettoken'),
+    path('api/updatetoken/', TokenRefreshView.as_view(), name='updatetoken'),
 ]
